@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tvTextoID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Digite seu nome:"
+        android:textSize="30sp"
+        android:textAlignment="center"/>
+
+    <EditText
+        android:id="@+id/etNome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nome"
+        android:textAlignment="center" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Digite sua idade:"
+        android:textSize="30sp"
+        android:textAlignment="center"/>
+
+    <EditText
+        android:id="@+id/etIdade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Idade"
+        android:inputType="number"
+        android:textAlignment="center" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Digite seu peso:"
+        android:textAlignment="center"
+        android:textSize="30sp" />
+
+    <EditText
+        android:id="@+id/etPeso"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Peso"
+        android:inputType="number"
+        android:textAlignment="center" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Digite sua Altura:"
+        android:textAlignment="center"
+        android:textSize="30sp" />
+
+    <EditText
+        android:id="@+id/etAltura"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Altura"
+        android:inputType="number"
+        android:textAlignment="center" />
+
+    <Button
+        android:id="@+id/btCalcularID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CALCULAR"
+        />
+
+    <TextView
+        android:id="@+id/tvView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+</LinearLayout>
