@@ -11,6 +11,11 @@ import androidx.appcompat.app.AppCompatActivity
 
 class SecondActivity : AppCompatActivity() {
 
+    var isFragmentOneLoaded = true
+    var isFragmentTwoLoaded = true
+    var isFragmentThreeLoaded = true
+    val manager = supportFragmentManager
+
     private lateinit var botao: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,7 +29,27 @@ class SecondActivity : AppCompatActivity() {
 
         val mensagem = intent.getStringExtra("MSG_IDA")
         Toast.makeText(this, mensagem, Toast.LENGTH_SHORT).show()
+
+
+        ///////////////////////////////////////////////////////////////////////
+
+        val Change = findViewById<Button>(R.id.btnIMC)
+        val Change2 = findViewById<Button>(R.id.btnCalorias)
+        val Change3 = findViewById<Button>(R.id.btnPesoIdeal)
+
+        Change.setOnClickListener({
+                ShowFragmentOne()
+        })
+
+        Change2.setOnClickListener({
+            ShowFragmentTwo()
+        })
+
+        Change3.setOnClickListener({
+            ShowFragmentThree()})
+
     }
+
 
     fun onClick(view: View){
         Log.i("APP_VV", "Clicou no botão Volta")
@@ -32,6 +57,39 @@ class SecondActivity : AppCompatActivity() {
         intent.putExtra("MSG_VOLTA", "Que bom!")
         setResult(Activity.RESULT_OK, intent)
         finish()
+    }
+
+    fun ShowFragmentOne() {
+        val transaction = manager.beginTransaction()
+        val fragment = FragmentOne()
+        transaction.replace(R.id.fragment_holder, fragment)
+        transaction.addToBackStack(null)
+        transaction.commit()
+        isFragmentOneLoaded = true
+        isFragmentThreeLoaded = false
+        isFragmentTwoLoaded = false
+    }
+
+    fun ShowFragmentTwo() {
+        val transaction = manager.beginTransaction()
+        val fragment = FragmentTwo()
+        transaction.replace(R.id.fragment_holder, fragment)
+        transaction.addToBackStack(null)
+        transaction.commit()
+        isFragmentOneLoaded = false
+        isFragmentThreeLoaded = false
+        isFragmentTwoLoaded = true
+    }
+
+    fun ShowFragmentThree() {
+        val transaction = manager.beginTransaction()
+        val fragment = FragmentThree()
+        transaction.replace(R.id.fragment_holder, fragment)
+        transaction.addToBackStack(null)
+        transaction.commit()
+        isFragmentOneLoaded = false
+        isFragmentTwoLoaded = false
+        isFragmentThreeLoaded = true
     }
 
 }
