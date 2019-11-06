@@ -52,6 +52,8 @@ class PessoaDAO {
     }
 
     fun delete(id: Int){
-
+        var where = "id = ?"
+        var whereP = arrayOf(id.toString())
+        this.bancoHelper.writableDatabase.delete("pessoas", where, whereP)
     }
 }
